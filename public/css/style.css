@@ -369,6 +369,7 @@ footer {
 .social__media a:hover, .footer__navegation a:hover{
     color: var(--color-blue);
 }
+
 /* Dashboard */
 .sidebar {
     background-color: #fff;
@@ -406,6 +407,12 @@ footer {
     margin-left: 8px;
 }
 
+.sidebar__logo{
+    width: 50%;
+    border:1px solid orange;
+    margin: 0px auto;
+}
+
 .dashboard {
     height: 100vh;
     width: 100%;
@@ -420,6 +427,14 @@ footer {
     justify-content: space-between;
     padding: 10px 30px;
     align-items: center;
+}
+
+.section_dashboard{
+    width:80%;
+    padding:20px;
+    margin:0px auto;
+    background-color:var(--color-white);
+    border-radius:10px;
 }
 
 .tagname {
@@ -571,7 +586,7 @@ footer {
 
 .login__image {
     width: 80%;
-    background: url('../img/image_login.svg') no-repeat rgba(83, 146, 247, 0.568);
+    background: url('../../public/img/image_login.svg') no-repeat rgba(83, 146, 247, 0.568);
     background-size: contain;
 }
 
@@ -738,7 +753,21 @@ footer {
         height: 70px;
         font-size: 50px;
     }
+
     
+    /* Card */
+.card__dashboard{
+    width:150px;
+    height:150px;
+    text-align:center;
+    padding:%px;
+    border-radius:10px;
+    background-color:var(--color-lightgray)
+}
+
+.card__dashboard img{
+    width:100%;
+}
     /* Login */
     .container__login{
         margin-top: 40%;

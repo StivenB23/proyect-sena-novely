@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DocumentsController;
+use App\Http\Controllers\ClassroomsController;
 use App\Http\Controllers\FichaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NoveltyController;
@@ -56,5 +57,7 @@ Route::middleware(['auth','user-role:tecnico'])->group(function(){
 });
 Route::middleware(['auth','user-role:administrador'])->group(function(){
     Route::get("/home", [DashboardController::class, 'administradorDashboard'])->name('home.admin');
+    Route::get("/classrooms", [ClassroomsController::class, 'index'])->name('admin.classroom');
+    Route::post("/classrooms", [ClassroomsController::class, 'store']);
 });
 

@@ -59,5 +59,16 @@ class UserTableSeeder extends Seeder
         $user->password = Hash::make('12345678');
         $user->role = 'tecnico';
         $user->save();
+
+        $user = new User();
+        $user->document_type = 'T.I';
+        $user->document_number = '1106769543';
+        $user->name = 'Key';
+        $user->lastname = '_';
+        $user->phone_number = '3222958021';
+        $user->email = 'keygame1115@gmail.com';
+        $user->password = Hash::make('12345678');
+        $user->role = 'tecnico';
+        $user->save();
     }
 }

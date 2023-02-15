@@ -6,12 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     {{-- Estiles --}}
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('css/style.css')}}"> --}}
      <!-- Icons -->
      <script src="https://kit.fontawesome.com/c50bb20207.js" crossorigin="anonymous"></script>
-    <!--AOS css -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+   
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <!-- Fancyboc css -->
@@ -22,7 +20,12 @@
     href="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.css"
     rel="stylesheet"
     type="text/css"
+
   />
+         @vite(['resources/css/app.css', 'resources/js/app.js'])
+          <!--AOS css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 </head>
 <body>
     @include('sweetalert::alert')
@@ -38,6 +41,6 @@
     ></script>
      <!-- Fancybox js -->
      <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-    <script src="{{ asset('js/main.js') }}" ></script>
+    {{-- <script src="{{ asset('js/main.js') }}" ></script> --}}
 </body>
 </html>

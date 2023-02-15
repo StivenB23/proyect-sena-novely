@@ -15,7 +15,7 @@
     <section id="home" class="hero">
         <article data-aos="zoom-out-right" class="hero__container" >
             <h2 class="hero__title">TITLE</h2>
-            <p class="hero__paragrap">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae adipisci commodi impedit eum officia pariatur sint ducimus nam esse qui, molestiae adipisci commodi impedit eum officia pariatur sint ducimus nam esse qui.</p>
+            <p class="hero__paragrap">HOLA Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae adipisci commodi impedit eum officia pariatur sint ducimus nam esse qui, molestiae adipisci commodi impedit eum officia pariatur sint ducimus nam esse qui.</p>
             <a class="hero__link" href="">Log in</a>
         </article>
         <div data-aos="fade-left" class="hero__img">

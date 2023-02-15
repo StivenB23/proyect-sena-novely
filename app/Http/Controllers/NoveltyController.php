@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Classroom;
 use App\Models\Novelty;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 
+use App\Mail\Notification;
+use Illuminate\Support\Facades\Mail;
 class NoveltyController extends Controller
 {
     /**
@@ -74,6 +77,14 @@ class NoveltyController extends Controller
         $novelty->state = "pendiente";
         $novelty->classroom_id= implode($request->only('ambiente'));
         $novelty->save();
+
+
+        $classroom = Classroom::where('id',implode($request->only('ambiente')))->get('number_classroom');
+
+        $correo = new Notification($classroom[0]->number_classroom,now()->toDateTimeString(), implode($request->only('problema')));
+        $tecnicos =  User::where('role','tecnico')
+                                ->get(['name','email']);
+        Mail::to($tecnicos)->send($correo);
 
         Alert::success('Novedad Creada Exitosamente','El equipo técnico se hara cargo lo más pronto posible.');
         return redirect()->route('novedad.'.Auth::user()->role);

@@ -12,9 +12,6 @@
         </div>
         @if (Auth::user()->role == 'instructor' or Auth::user()->role == 'aprendiz')
         <section class="dashboard__content">
-          @foreach ($errors as $error)
-              <p>{{$error}}</p>
-          @endforeach
               <form action="/{{Auth::user()->role}}/novedad" class="container__form" method="POST" enctype="multipart/form-data">
                 <h2 class="form__title" >REGISTRAR NOVEDAD</h2>
             <div class="form__components">
@@ -33,7 +30,7 @@
                       @csrf
                     <div class="form__select">
                         @error('ambiente')      
-                          <small class="error">{{$message}}</small>
+                          <small class="error_input">{{$message}}</small>
                         @enderror
                         <label>Ambiente:</label> <br>
                         <select name="ambiente" id="">
@@ -46,7 +43,7 @@
                       <br>
                       <div class="form__problem">
                         @error('problema')
-                          <p>{{ $message }}</p>
+                          <p class="error_input" >{{ $message }}</p>
                         @enderror
                         <label>Problema:</label><br>
                         <textarea rows="2" class="ckeditor" name="problema" id="editor1" placeholder="Describa de manera clara y corta la novedad"></textarea>
